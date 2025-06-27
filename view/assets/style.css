@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pixelify+Sans:wght@400..700&display=swap');
+
+:root {
+    --verde-principal: #3E8E41;
+    --verde-bloco: #5E7C16;
+    --verde-musgo: #275D38;
+    --marrom-terra: #835C3B;
+    --cinza-pedra: #8B8B8B;
+    --amarelo-contraste: #F0E68C;
+    --azul-diamante: #33C5F3;
+    --branco-puro: #FFFFFF;
+    --cinza-texto: #4F4F4F;
+}
+
+/* ===== TIPOGRAFIA ===== */
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* ===== LAYOUT MASONRY PINTEREST ===== */
+.masonry-container {
+    column-count: 4;
+    column-gap: 20px;
+    padding: 0 15px;
+}
+
+.masonry-item {
+    break-inside: avoid;
+    margin-bottom: 20px;
+    display: inline-block;
+    width: 100%;
+}
+
+/* ===== CARDS ESTILO PINTEREST ===== */
+.masonry-item .card {
+    border: 2px solid var(--cinza-pedra);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    background-color: var(--branco-puro);
+}
+
+.masonry-item .card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(62, 142, 65, 0.3) !important;
+    border-color: var(--verde-principal);
+}
+
+.masonry-item .card-body {
+    padding: 12px;
+}
+
+.masonry-item .card-title {
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    line-height: 1.3;
+    color: var(--verde-principal);
+}
+
+/* ===== BADGES PERSONALIZADAS ===== */
+.badge-sm {
+    font-size: 0.7rem;
+    padding: 0.25em 0.5em;
+    border-radius: 6px;
+}
+
+/* ===== BOTÕES DE EXCLUSÃO ===== */
+.btn-delete {
+    background-color: var(--marrom-terra);
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    transition: all 0.3s ease;
+}
+
+.btn-delete:hover {
+    background-color: #6B4A32;
+    transform: scale(1.1);
+}
+
+/* ===== MODAL PERSONALIZADO ===== */
+.modal-content {
+    border: 3px solid var(--verde-principal);
+    border-radius: 15px;
+}
+
+.modal-header {
+    background-color: var(--verde-principal);
+    color: white;
+    border-radius: 12px 12px 0 0;
+}
+
+.btn-confirmar {
+    background-color: var(--marrom-terra);
+    border-color: var(--marrom-terra);
+    color: white;
+}
+
+.btn-confirmar:hover {
+    background-color: #6B4A32;
+    border-color: #6B4A32;
+}
+
+.btn-cancelar {
+    background-color: var(--cinza-pedra);
+    border-color: var(--cinza-pedra);
+    color: white;
+}
+
+.btn-cancelar:hover {
+    background-color: #777777;
+    border-color: #777777;
+}
+
+/* ===== RESPONSIVIDADE ESTILO PINTEREST ===== */
+@media (max-width: 1200px) {
+    .masonry-container {
+        column-count: 3;
+    }
+}
+
+@media (max-width: 768px) {
+    .masonry-container {
+        column-count: 2;
+        column-gap: 15px;
+    }
+    .masonry-item {
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .masonry-container {
+        column-count: 1;
+        column-gap: 10px;
+    }
+}
+
+/* ===== ANIMAÇÕES ===== */
+.masonry-item {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== FORMULÁRIOS ===== */
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--verde-principal);
+    box-shadow: 0 0 0 0.2rem rgba(62, 142, 65, 0.25);
+}
+
+/* ===== ALERTAS PERSONALIZADOS ===== */
+.alert-success-custom {
+    background-color: var(--verde-principal);
+    border-color: var(--verde-bloco);
+    color: white;
+}
+
+.alert-warning-custom {
+    background-color: var(--amarelo-contraste);
+    border-color: var(--marrom-terra);
+    color: var(--cinza-texto);
+}
+
+.alert-error-custom {
+    background-color: var(--marrom-terra);
+    border-color: var(--verde-musgo);
+    color: white;
+}
