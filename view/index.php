@@ -56,14 +56,14 @@ if ($_POST) {
 
     // Validação da versão
     if (!$versao || strlen($versao) > 10) {
-        array_push($erros, "Informe a versão do Minecraft onde o mob foi adicionado (máx. 10 caracteres).");
+        array_push($erros, "Informe a versão do Minecraft onde o mob foi adicionado");
     }
 
     // Validação da imagem
     if (!$imagem) {
         array_push($erros, "Informe a URL da imagem do mob.");
     } elseif (strlen($imagem) > 500) {
-        array_push($erros, "A URL da imagem deve ter no máximo 255 caracteres.");
+        array_push($erros, "A URL da imagem deve ter no máximo 500 caracteres.");
     }
 
     // Insere no banco se não houver erros
